@@ -29,7 +29,7 @@ public class HeroServiceImpl implements HeroService {
 
         //Hero selectedHero = new Hero("ashkan",100,100,100);
         //AtomicReference<Hero> selectedHero = new AtomicReference<>(h3);
-        Hero selectedHero = h1;
+        //Hero selectedHero = h1;
 
 //          heroList.forEach(hero -> {
 //              if (hero.getName().equals(name)) {
@@ -37,11 +37,11 @@ public class HeroServiceImpl implements HeroService {
 //           }
 //          });
 
-        for (Hero hero:heroList) {
-           if (hero.getName().equals(name)) {
-               selectedHero = hero;
-           }
-        }
+//        for (Hero hero:heroList) {
+//           if (hero.getName().equals(name)) {
+//               selectedHero = hero;
+//           }
+//        }
 
 //        for (int i = 0; i < heroList.size(); i++) {
 //            if (heroList.get(i).getName().equals(name)) {
@@ -67,7 +67,8 @@ public class HeroServiceImpl implements HeroService {
 //                // return "No Hero Selected"
 //                break;
 //        }
-        return selectedHero;
+        //return selectedHero;
+        return heroList.stream().filter(hero -> hero.getName().equals(name)).findFirst().orElse(h1);
     }
 
     @Override
