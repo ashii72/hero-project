@@ -16,4 +16,9 @@ public class HeroController {
     public Hero getHeroByName(@RequestParam("name") String name) {
         return heroService.getHeroByName(name);
     }
+
+    @PostMapping("/find/hero")
+    public Hero getHeroByHeroObject(@RequestBody Hero hero) {
+        return heroService.findHeroByHeroObject(hero);
+    }
 }

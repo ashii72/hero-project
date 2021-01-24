@@ -1,5 +1,6 @@
 package com.example.hero.service;
 
+import com.example.hero.dto.HeroHealthDto;
 import com.example.hero.model.Hero;
 
 import java.util.ArrayList;
@@ -20,9 +21,9 @@ public class HeroServiceImpl implements HeroService {
 
     List<Hero> heroList = List.of(h1,h2,h3);
 
-    List<String> testList = new ArrayList<String>();
-
     List<Hero> heroList2 = new ArrayList<Hero>();
+
+    List<Hero> heroList3 = List.of(h1,h2,h3);
 
     @Override
     public Hero getHeroByName(String name) {
@@ -73,21 +74,58 @@ public class HeroServiceImpl implements HeroService {
 
     @Override
     public List<Hero> getHeroByStrength(int strength) {
-        return null;
+
+        List<Hero> selectedList = new ArrayList<>();
+
+        for (Hero hero: heroList3) {
+            if (hero.getStrength() == strength) {
+               selectedList.add(hero);
+            }
+        }
+        return selectedList;
     }
 
     @Override
     public List<Hero> getHeroByStamina(int stamina) {
         return null;
+        //TODO
     }
 
     @Override
-    public List<Hero> getHeroHealth() {
-        return null;
+    public List<HeroHealthDto> getHeroHealth() {
+
+        List<HeroHealthDto> healthList = new ArrayList<>();
+
+        for (Hero hero: heroList) {
+            //HeroHealthDto heroHealthDto = new HeroHealthDto(hero.getName(),hero.getHealth());
+            healthList.add(new HeroHealthDto(hero.getName(),hero.getHealth()));
+        }
+
+        return healthList;
     }
 
     @Override
     public String getGodName() {
         return godService.getGodName();
+    }
+
+    @Override
+    public List<Hero> getSortedListByStrengthAsc() {
+        return null;
+    }
+
+    @Override
+    public List<Hero> getSortedListByStrengthDesc() {
+        return null;
+    }
+
+    @Override
+    public Hero findHeroByHeroObject(Hero hero) {
+        return null; // Impl using contain,...
+    }
+
+    @Override
+    public Hero removeHeroByHeroObject(Hero hero) {
+        return null;
     }
 }
