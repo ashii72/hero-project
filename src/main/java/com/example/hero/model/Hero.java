@@ -1,5 +1,7 @@
 package com.example.hero.model;
 
+import java.util.List;
+
 public class Hero {
     public String name;
     public int strength;

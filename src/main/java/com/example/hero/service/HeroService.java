@@ -17,5 +17,5 @@ public interface HeroService {
     Hero removeHeroByHeroObject(Hero hero);
 }
 
-// List-contain,sort,sublist,remove,... //Use these API's
+// List --> contain,sort,sublist,remove,... //Use these API's
 
