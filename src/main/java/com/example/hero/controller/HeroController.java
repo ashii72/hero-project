@@ -20,12 +20,12 @@ public class HeroController {
         return heroService.getHeroByName(name);
     }
 
-    @GetMapping("/hero")
+    @GetMapping("/hero/strength")
     public List<Hero> getHeroByStrength(@RequestParam("strength") int strength) {
         return heroService.getHeroByStrength(strength);
     }
 
-    @GetMapping("/hero/{stamina}")
+    @GetMapping("/hero/stamina/{stamina}")
     public List<Hero> getHeroByStamina(@PathVariable int stamina) {
         return heroService.getHeroByStamina(stamina);
     }

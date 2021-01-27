@@ -18,9 +18,9 @@ public class HeroServiceImpl implements HeroService {
         this.godService = godService;
     }
 
-    Hero h1 = new Hero("Athena", 85, 100, 76);
-    Hero h2 = new Hero("Gaia", 88, 100, 98);
-    Hero h3 = new Hero("Atreus", 95, 100, 98);
+    Hero h1 = new Hero("Athena", 85, 73, 76);
+    Hero h2 = new Hero("Gaia", 88, 89, 98);
+    Hero h3 = new Hero("Atreus", 95, 65, 98);
 
     List<Hero> heroList = List.of(h1, h2, h3);
 
@@ -163,7 +163,7 @@ public class HeroServiceImpl implements HeroService {
         List<Hero> findHeroByObject = heroList2;
 
         if (findHeroByObject.contains(h2)) {
-            findHeroByObject.add(h2);
+            return h2;
         }
         return (Hero) findHeroByObject;
     }
