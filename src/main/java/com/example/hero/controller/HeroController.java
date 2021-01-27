@@ -1,5 +1,6 @@
 package com.example.hero.controller;
 
+import com.example.hero.dto.HeroHealthDto;
 import com.example.hero.model.Hero;
 import com.example.hero.service.GodServiceImpl;
 import com.example.hero.service.HeroService;
@@ -27,6 +28,11 @@ public class HeroController {
     @GetMapping("/hero/{stamina}")
     public List<Hero> getHeroByStamina(@PathVariable int stamina) {
         return heroService.getHeroByStamina(stamina);
+    }
+
+    @GetMapping("/hero/health")
+    public List<HeroHealthDto> getHeroHealth() {
+        return heroService.getHeroHealth();
     }
 
     @PostMapping("/find/hero")
