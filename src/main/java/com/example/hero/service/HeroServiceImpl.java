@@ -26,7 +26,7 @@ public class HeroServiceImpl implements HeroService {
 
     //List<Hero> heroList2 = new ArrayList<Hero>();
 
-    List<Hero> heroList2 = List.of(h1, h2, h3);
+    List<Hero> heroList2 = new ArrayList<>();
 
     List<Hero> heroList3 = List.of(h1, h2, h3);
 
@@ -123,19 +123,17 @@ public class HeroServiceImpl implements HeroService {
     @Override
     public List<Hero> getSortedListByStrengthAsc() {
 
-        List<Hero> strengthListAsc = new ArrayList<>();
-
-        strengthListAsc.add(h1);
-        strengthListAsc.add(h2);
-        strengthListAsc.add(h3);
+        heroList2.add(h1);
+        heroList2.add(h2);
+        heroList2.add(h3);
 
         //strengthListAsc.stream().sorted();
 
         //strengthListAsc.sort(Comparator.naturalOrder());
 
-        //Collections.sort(strengthListAsc);
+         heroList2.sort(Comparator.naturalOrder());
+         return heroList2;
 
-        return strengthListAsc;
     }
 
     @Override
@@ -160,20 +158,26 @@ public class HeroServiceImpl implements HeroService {
     public Hero findHeroByHeroObject(Hero hero) {
         // return null; // Impl using contain,...
 
-        List<Hero> findHeroByObject = heroList2;
-
-        if (findHeroByObject.contains(h2)) {
-            return h2;
-        }
-        return (Hero) findHeroByObject;
+            if (heroList2.contains(hero)) {
+                return hero;
+            } else {
+                return null;
+            }
     }
 
     @Override
-    public Hero removeHeroByHeroObject(Hero hero) {
+    public List<Hero> removeHeroByHeroObject(Hero hero) {
 
-        List<Hero> removeHeroByObject = heroList3;
+        //TODO //use equal methood & contain
 
-        removeHeroByObject.remove(h1);
-        return (Hero) removeHeroByObject;
+        heroList2.add(h1);
+        heroList2.add(h2);
+        heroList2.add(h3);
+
+        //int index = heroList2.indexOf(hero) ;
+        //heroList2.remove(hero);
+        return heroList2.subList(0,1);
+        //return heroList2;
+
     }
 }

@@ -41,7 +41,12 @@ public class HeroController {
     }
 
     @PostMapping("/remove/hero")
-    public Hero removeHeroByHeroObject(@RequestBody Hero hero) {
+    public List<Hero> removeHeroByHeroObject(@RequestBody Hero hero) {
         return heroService.removeHeroByHeroObject(hero);
+    }
+
+    @GetMapping("/hero/asc")
+    public List<Hero> getSortedListByStrengthAsc() {
+        return heroService.getSortedListByStrengthAsc();
     }
 }

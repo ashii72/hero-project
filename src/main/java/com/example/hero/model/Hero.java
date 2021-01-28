@@ -1,8 +1,9 @@
 package com.example.hero.model;
 
 import java.util.List;
+import java.util.Objects;
 
-public class Hero {
+public class Hero implements Comparable<Hero> {
     public String name;
     public int strength;
     public int health;
@@ -23,6 +24,19 @@ public class Hero {
                 ", health=" + health +
                 ", stamina=" + stamina +
                 '}';
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Hero hero = (Hero) o;
+        return strength == hero.strength && health == hero.health && stamina == hero.stamina && name.equals(hero.name);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, strength, health, stamina);
     }
 
     public String getName() {
@@ -55,5 +69,10 @@ public class Hero {
 
     public void setStamina(int stamina) {
         this.stamina = stamina;
+    }
+
+    @Override
+    public int compareTo(Hero o) {
+        return this.name.compareTo(o.name);
     }
 }

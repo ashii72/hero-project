@@ -14,7 +14,7 @@ public interface HeroService {
     List<Hero> getSortedListByStrengthAsc();  //Ascending
     List<Hero> getSortedListByStrengthDesc();  // Descending
     Hero findHeroByHeroObject(Hero hero);
-    Hero removeHeroByHeroObject(Hero hero);
+    List<Hero> removeHeroByHeroObject(Hero hero);
 }
 
 // List --> contain,sort,sublist,remove,... //Use these API's
