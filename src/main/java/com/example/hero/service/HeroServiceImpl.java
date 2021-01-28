@@ -127,23 +127,25 @@ public class HeroServiceImpl implements HeroService {
         heroList2.add(h2);
         heroList2.add(h3);
 
+        heroList2.sort(Comparator.naturalOrder());
+        return heroList2;
+
         //strengthListAsc.stream().sorted();
 
         //strengthListAsc.sort(Comparator.naturalOrder());
 
-         heroList2.sort(Comparator.naturalOrder());
-         return heroList2;
 
     }
 
     @Override
     public List<Hero> getSortedListByStrengthDesc() {
 
-        List<Hero> strengthListDesc = new ArrayList<>();
+        heroList2.add(h1);
+        heroList2.add(h2);
+        heroList2.add(h3);
 
-        strengthListDesc.add(h1);
-        strengthListDesc.add(h2);
-        strengthListDesc.add(h3);
+        heroList2.sort(Comparator.reverseOrder());
+        return heroList2;
 
         // strengthListDesc.stream().sorted(Comparator.reverseOrder());
 
@@ -151,7 +153,7 @@ public class HeroServiceImpl implements HeroService {
 
         // strengthListDesc.stream().sorted(Comparator.reverseOrder()).collect(Collectors.toList());
 
-        return strengthListDesc;
+
     }
 
     @Override
