@@ -131,7 +131,7 @@ public class HeroServiceImpl implements HeroService {
 
         //strengthListAsc.stream().sorted();
 
-        //strengthListAsc.sort(Comparator.naturalOrder())
+        //strengthListAsc.sort(Comparator.naturalOrder());
 
         //Collections.sort(strengthListAsc);
 
