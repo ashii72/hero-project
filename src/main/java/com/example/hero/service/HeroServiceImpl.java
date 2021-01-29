@@ -178,7 +178,7 @@ public class HeroServiceImpl implements HeroService {
 
         //int index = heroList2.indexOf(hero) ;
         //heroList2.remove(hero);
-        return heroList2.subList(0,1);
+        return heroList2.subList(1,2);
         //return heroList2;
 
     }
