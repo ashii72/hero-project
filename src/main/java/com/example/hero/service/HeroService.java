@@ -13,6 +13,7 @@ public interface HeroService {
     String getGodName();
     List<Hero> getSortedListByStrengthAsc();  //Ascending
     List<Hero> getSortedListByStrengthDesc();  // Descending
+    List<Hero> multipleSorting();
     Hero findHeroByHeroObject(Hero hero);
     List<Hero> removeHeroByHeroObject(Hero hero);
 }

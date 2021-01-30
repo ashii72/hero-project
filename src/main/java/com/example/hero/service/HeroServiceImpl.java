@@ -18,9 +18,13 @@ public class HeroServiceImpl implements HeroService {
         this.godService = godService;
     }
 
-    Hero h1 = new Hero("Athena", 85, 73, 76);
-    Hero h2 = new Hero("Gaia", 88, 89, 98);
-    Hero h3 = new Hero("Atreus", 95, 65, 98);
+//    Hero h1 = new Hero("Athena", 20, 70, 76);
+//    Hero h2 = new Hero("Gaia", 15, 40, 56);
+//    Hero h3 = new Hero("Atreus", 45, 85, 95);
+
+    Hero h1 = new Hero("Athena", 20, 70, 76);
+    Hero h2 = new Hero("Gaia", 15, 40, 95);
+    Hero h3 = new Hero("Atreus", 45, 85, 95);
 
     List<Hero> heroList = List.of(h1, h2, h3);
 
@@ -29,6 +33,10 @@ public class HeroServiceImpl implements HeroService {
     List<Hero> heroList2 = new ArrayList<>();
 
     List<Hero> heroList3 = List.of(h1, h2, h3);
+
+    Comparator<Hero> compareByHealthAndStamina = Comparator.comparing(Hero :: getHealth).thenComparing(Hero :: getStamina);
+
+    List<Hero> heroList4 = heroList3.stream().sorted(compareByHealthAndStamina).collect(Collectors.toList());
 
     @Override
     public Hero getHeroByName(String name) {
@@ -127,8 +135,13 @@ public class HeroServiceImpl implements HeroService {
         heroList2.add(h2);
         heroList2.add(h3);
 
-        heroList2.sort(Comparator.naturalOrder());
+        Collections.sort(heroList2);
         return heroList2;
+
+
+
+//        heroList2.sort(Comparator.naturalOrder());
+//        return heroList2;
 
         //strengthListAsc.stream().sorted();
 
@@ -144,8 +157,11 @@ public class HeroServiceImpl implements HeroService {
         heroList2.add(h2);
         heroList2.add(h3);
 
-        heroList2.sort(Comparator.reverseOrder());
+        Collections.sort(heroList2,Collections.reverseOrder());
         return heroList2;
+
+//        heroList2.sort(Comparator.reverseOrder());
+//        return heroList2;
 
         // strengthListDesc.stream().sorted(Comparator.reverseOrder());
 
@@ -176,10 +192,22 @@ public class HeroServiceImpl implements HeroService {
         heroList2.add(h2);
         heroList2.add(h3);
 
-        //int index = heroList2.indexOf(hero) ;
+        if (heroList2.equals(hero)) {
+            return (List<Hero>) hero;
+        }
+
+
+        //int index = heroList2.indexOf(hero);
         //heroList2.remove(hero);
-        return heroList2.subList(1,2);
+        return null;
+        //return heroList2.subList(1,2);
         //return heroList2;
 
+    }
+
+    @Override
+    public List<Hero> multipleSorting() {
+
+        return heroList4;
     }
 }

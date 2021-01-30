@@ -72,7 +72,9 @@ public class Hero implements Comparable<Hero> {
     }
 
     @Override
-    public int compareTo(Hero o) {
-        return this.name.compareTo(o.name);
+    public int compareTo(Hero o) {            // Question
+        Hero h = (Hero) o;
+        return this.strength - h.strength;
     }
+
 }

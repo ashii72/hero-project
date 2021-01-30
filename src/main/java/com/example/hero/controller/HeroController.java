@@ -13,7 +13,7 @@ import java.util.List;
 @RequestMapping("/godofwar")
 public class HeroController {
 
-    HeroService heroService = new HeroServiceImpl(new GodServiceImpl()); // why we impl "new GodServiceImpl()" in HeroServiceImpl as a input?
+    HeroService heroService = new HeroServiceImpl(new GodServiceImpl()); // why we impl "new GodServiceImpl()" in HeroServiceImpl as an input?
 
     @GetMapping("/hero")
     public Hero getHeroByName(@RequestParam("name") String name) {
@@ -35,12 +35,12 @@ public class HeroController {
         return heroService.getHeroHealth();
     }
 
-    @PostMapping("/find/hero")
+    @PostMapping("/hero/find")
     public Hero getHeroByHeroObject(@RequestBody Hero hero) {
         return heroService.findHeroByHeroObject(hero);
     }
 
-    @PostMapping("/remove/hero")
+    @PostMapping("/hero/remove")
     public List<Hero> removeHeroByHeroObject(@RequestBody Hero hero) {
         return heroService.removeHeroByHeroObject(hero);
     }
@@ -48,5 +48,15 @@ public class HeroController {
     @GetMapping("/hero/asc")
     public List<Hero> getSortedListByStrengthAsc() {
         return heroService.getSortedListByStrengthAsc();
+    }
+
+    @GetMapping("/hero/desc")
+    public List<Hero> getSortedListByStrengthDesc() {
+        return heroService.getSortedListByStrengthDesc();
+    }
+
+    @GetMapping("/hero/sort")
+    public List<Hero> multipleSorting() {
+        return heroService.multipleSorting();
     }
 }
