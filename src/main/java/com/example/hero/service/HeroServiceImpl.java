@@ -186,7 +186,7 @@ public class HeroServiceImpl implements HeroService {
     @Override
     public List<Hero> removeHeroByHeroObject(Hero hero) {
 
-        //TODO //use equal methood & contain
+        //TODO //use equal method & contain
 
         heroList2.add(h1);
         heroList2.add(h2);
