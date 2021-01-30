@@ -23,7 +23,7 @@ public class HeroServiceImpl implements HeroService {
 //    Hero h3 = new Hero("Atreus", 45, 85, 95);
 
     Hero h1 = new Hero("Athena", 20, 70, 76);
-    Hero h2 = new Hero("Gaia", 15, 40, 95);
+    Hero h2 = new Hero("Gaia", 15, 70, 95);
     Hero h3 = new Hero("Atreus", 45, 85, 95);
 
     List<Hero> heroList = List.of(h1, h2, h3);
@@ -192,14 +192,17 @@ public class HeroServiceImpl implements HeroService {
         heroList2.add(h2);
         heroList2.add(h3);
 
-        if (heroList2.equals(hero)) {
-            return (List<Hero>) hero;
-        }
+        List<Hero> selectedList1 = new ArrayList<>();
 
+        for (Hero hero1: heroList2) {
+            if (!hero1.name.equals(hero.name)) {
+                selectedList1.add(hero1);
+            }
+        }
 
         //int index = heroList2.indexOf(hero);
         //heroList2.remove(hero);
-        return null;
+        return selectedList1;
         //return heroList2.subList(1,2);
         //return heroList2;
 
