@@ -73,9 +73,13 @@ public class Hero implements Comparable<Hero> {
 
     @Override
     public int compareTo(Hero o) {            // Question --> Sort based on strength
+
+//        return this.name.compareTo(o.name);
+//
 //        Hero h = (Hero) o;
 //        return this.strength - h.strength;
-        return this.name.compareTo(o.name);
+
+        return Integer.compare(getStrength(),o.getStrength());
     }
 
 }
