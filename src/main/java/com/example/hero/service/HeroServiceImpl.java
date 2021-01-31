@@ -23,7 +23,7 @@ public class HeroServiceImpl implements HeroService {
 //    Hero h3 = new Hero("Atreus", 45, 85, 95);
 
     Hero h1 = new Hero("Athena", 20, 70, 76);
-    Hero h2 = new Hero("Gaia", 15, 70, 95);
+    Hero h2 = new Hero("Gaia", 32, 70, 95);
     Hero h3 = new Hero("Atreus", 45, 85, 95);
 
     List<Hero> heroList = List.of(h1, h2, h3);
@@ -131,9 +131,12 @@ public class HeroServiceImpl implements HeroService {
     @Override
     public List<Hero> getSortedListByStrengthAsc() {
 
+        Hero h4 = new Hero("Ashkan",90,100,98);
+
         heroList2.add(h1);
         heroList2.add(h2);
         heroList2.add(h3);
+        heroList2.add(h4);
 
         Collections.sort(heroList2);
         return heroList2;
